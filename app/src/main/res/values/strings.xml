@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">Exploding Plans</string>
+    <string name="app_name">Giga-Calculator app</string>
+    <string name="first_number">Enter first number</string>
+    <string name="second_number">Enter second number</string>
+    <string name="calculating">Calculate</string>
+    <string name="operation">Add numbers</string>
 
 </resources>
