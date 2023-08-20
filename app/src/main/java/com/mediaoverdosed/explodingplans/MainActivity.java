@@ -9,8 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView tvResult;
-    private EditText etFirstNumber, etSecondNumber;
+    private EditText etLeftTop, etLeftBottom, etRightTop, etRightBottom;
     private Button btnCalculate;
 
     @Override
@@ -18,19 +17,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvResult = findViewById(R.id.tvResult);
-        etFirstNumber = findViewById(R.id.etFirstNumber);
-        etSecondNumber = findViewById(R.id.etSecondNumber);
+        etLeftTop = findViewById(R.id.etLeftTop);
+        etLeftBottom = findViewById(R.id.etLeftBottom);
+        etRightTop = findViewById(R.id.etRightTop);
+        etRightBottom = findViewById(R.id.etRightBottom);
+
         btnCalculate = findViewById(R.id.btnCalculate);
 
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                float first_number = Float.parseFloat(etFirstNumber.getText().toString());
-                float second_number = Float.parseFloat(etSecondNumber.getText().toString());
-                float result = first_number + second_number;
-                tvResult.setText(String.valueOf(result));
-
+                 // Math operations here
             }
         });
     }

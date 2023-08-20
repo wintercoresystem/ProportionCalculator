@@ -7,61 +7,107 @@
     android:layout_margin="10dp">
 
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
         android:text="@string/app_name"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvResult"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Calculating..."
-        android:textAlignment="textEnd"
-        android:textColor="@color/red_explosion"
-        android:textSize="25sp"
-        android:textStyle="bold"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
-    <EditText
-        android:id="@+id/etSecondNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:hint="@string/second_number"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvResult" />
+        <View
+            android:id="@+id/vLineLeft"
+            android:layout_width="150dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="11dp"
+            android:background="@color/dark_grey"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etLeftTop" />
 
-    <EditText
-        android:id="@+id/etFirstNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="48dp"
-        android:hint="@string/first_number"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvResult" />
+        <EditText
+            android:id="@+id/etLeftTop"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:text="@string/LeftTop"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnCalculate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="@string/operation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etSecondNumber" />
+        <EditText
+            android:id="@+id/etLeftBottom"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:inputType="number"
+            android:text="@string/LeftBottom"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/vLineLeft" />
+
+
+        <View
+            android:id="@+id/vLineRight"
+            android:layout_width="150dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="11dp"
+            android:background="@color/dark_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/etRightTop" />
+
+        <EditText
+            android:id="@+id/etRightTop"
+            android:layout_width="0dp"
+
+            android:layout_height="48dp"
+            android:background="@null"
+            android:hint="@string/RightTop"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etRightBottom"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="9dp"
+            android:background="@null"
+            android:hint="@string/RightBottom"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/vLineRight" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">Giga-Calculator app</string>
-    <string name="first_number">Enter first number</string>
-    <string name="second_number">Enter second number</string>
-    <string name="calculating">Calculate</string>
-    <string name="operation">Add numbers</string>
+    <string name="app_name">Proportions Calculator</string>
+    <string name="operation">⊗</string>
+
+    <string name="LeftTop">1</string>
+    <string name="LeftBottom">2</string>
+    <string name="RightTop">First number</string>
+    <string name="RightBottom">Second number</string>
 
 </resources>
