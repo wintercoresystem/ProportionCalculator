@@ -6,108 +6,151 @@
     android:layout_height="match_parent"
     android:layout_margin="10dp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="@string/app_name"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <View
-            android:id="@+id/vLineLeft"
-            android:layout_width="150dp"
-            android:layout_height="2dp"
-            android:layout_marginTop="11dp"
-            android:background="@color/dark_grey"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etLeftTop" />
-
-        <EditText
-            android:id="@+id/etLeftTop"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:background="@null"
-            android:text="@string/LeftTop"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <android.widget.Button
+                android:id="@+id/btnLeftTop"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/button"
+                android:text="@string/operation"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etLeftTop"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:background="none"
+                android:hint="@string/RightTop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnLeftTop"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/separator_left"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="12dp"
+                android:foreground="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnLeftTop" />
+
+            <android.widget.Button
+                android:id="@+id/btnLeftBottom"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button"
+                android:text="@string/operation"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/separator_left" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:background="none"
+                android:hint="@string/RightBottom"
+                app:layout_constraintEnd_toEndOf="@id/separator_left"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/btnLeftBottom"
+                app:layout_constraintTop_toBottomOf="@+id/separator_left" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <android.widget.Button
+            android:id="@+id/btnRightTop"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button"
+            android:text="@string/operation"
+            android:textColor="@color/white"
+            android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/etLeftBottom"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="10dp"
-            android:background="@null"
-            android:inputType="number"
-            android:text="@string/LeftBottom"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/vLineLeft" />
-
-
-        <View
-            android:id="@+id/vLineRight"
-            android:layout_width="150dp"
-            android:layout_height="2dp"
-            android:layout_marginTop="11dp"
-            android:background="@color/dark_grey"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/etRightTop" />
 
         <EditText
             android:id="@+id/etRightTop"
             android:layout_width="0dp"
-
-            android:layout_height="48dp"
-            android:background="@null"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:background="none"
             android:hint="@string/RightTop"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toEndOf="@+id/btnRightTop"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/etRightBottom"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="9dp"
-            android:background="@null"
-            android:hint="@string/RightBottom"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/vLineRight" />
+<!--        <View-->
+<!--            android:id="@+id/separator_right"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="2dp"-->
+<!--            android:layout_marginHorizontal="10dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:foreground="@color/black"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/btnRightTop" />-->
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+<!--        <android.widget.Button-->
+<!--            android:id="@+id/btnRightBottom"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:background="@drawable/button"-->
+<!--            android:text="@string/operation"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="25sp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/separator_right" />-->
 
+<!--        <EditText-->
+<!--            android:id="@+id/etRightBottom"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:background="none"-->
+<!--            android:hint="@string/RightBottom"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/separator_left"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/btnRightBottom"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/separator_right" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
