@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp">
+    android:layout_margin="20dp">
 
     <TextView
         android:id="@+id/textView"
@@ -26,6 +26,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
+
+        <android.widget.Button
+            android:id="@+id/btnLeftTop"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button"
+            android:text="@string/operation"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etLeftTop"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:inputType="number"
+            android:hint="@string/LeftTop"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_marginHorizontal="5sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toEndOf="@+id/btnLeftTop"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <View
             android:id="@+id/vLineLeft"
             android:layout_width="150dp"
@@ -36,32 +62,61 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etLeftTop" />
 
-        <EditText
-            android:id="@+id/etLeftTop"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:background="@null"
-            android:text="@string/LeftTop"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
+        <android.widget.Button
+            android:id="@+id/btnLeftBottom"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button"
+            android:text="@string/operation"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/vLineLeft" />
 
         <EditText
             android:id="@+id/etLeftBottom"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@null"
             android:inputType="number"
-            android:text="@string/LeftBottom"
+            android:hint="@string/LeftBottom"
             android:textAlignment="center"
-            android:textSize="24sp"
+            android:textSize="18sp"
+            android:layout_marginHorizontal="5sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toEndOf="@+id/btnLeftBottom"
             app:layout_constraintTop_toBottomOf="@+id/vLineLeft" />
 
+
+
+
+        <EditText
+            android:id="@+id/etRightTop"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:text="@string/RightTop"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_marginHorizontal="5sp"
+            app:layout_constraintEnd_toStartOf="@+id/btnRightTop"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.widget.Button
+            android:id="@+id/btnRightTop"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button"
+            android:text="@string/operation"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/vLineRight"
@@ -74,38 +129,39 @@
             app:layout_constraintTop_toBottomOf="@+id/etRightTop" />
 
         <EditText
-            android:id="@+id/etRightTop"
-            android:layout_width="0dp"
-
-            android:layout_height="48dp"
-            android:background="@null"
-            android:hint="@string/RightTop"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
             android:id="@+id/etRightBottom"
             android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="9dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
             android:background="@null"
-            android:hint="@string/RightBottom"
+            android:text="@string/RightBottom"
             android:inputType="number"
             android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="18sp"
+            android:layout_marginHorizontal="5sp"
+            app:layout_constraintEnd_toStartOf="@+id/btnRightBottom"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/vLineRight" />
+
+        <android.widget.Button
+            android:id="@+id/btnRightBottom"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button"
+            android:text="@string/operation"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vLineRight"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

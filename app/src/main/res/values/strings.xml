@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Proportions Calculator</string>
-    <string name="operation">⊗</string>
+    <string name="operation">×</string>
 
-    <string name="LeftTop">1</string>
-    <string name="LeftBottom">2</string>
-    <string name="RightTop">First number</string>
-    <string name="RightBottom">Second number</string>
+    <string name="LeftTop">First number</string>
+    <string name="LeftBottom">Second number</string>
+    <string name="RightTop">1</string>
+    <string name="RightBottom">2</string>
 
 </resources>
