@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Proportions Calculator</string>
     <string name="operation">×</string>
+    <string name="clear">Clear all fields</string>
 
     <string name="LeftTop">First number</string>
     <string name="LeftBottom">Second number</string>

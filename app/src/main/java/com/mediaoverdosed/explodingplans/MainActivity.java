@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private EditText etLeftTop, etLeftBottom, etRightTop, etRightBottom;
-    private Button btnLeftBottom, btnLeftTop, btnRightBottom, btnRightTop;
+    private Button btnLeftBottom, btnLeftTop, btnRightBottom, btnRightTop, btnClear;
 
 
     @Override
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         btnLeftTop = findViewById(R.id.btnLeftTop);
         btnRightBottom = findViewById(R.id.btnRightBottom);
         btnRightTop = findViewById(R.id.btnRightTop);
-
+        btnClear = findViewById(R.id.btnClear);
 
 
         btnLeftTop.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 calculateProportion(true, false);
-            }
+            };
         });
         btnRightTop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,9 +56,15 @@ public class MainActivity extends AppCompatActivity {
                 calculateProportion(false, false);
             }
         });
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clearFields();
+            }
+        });
     }
 
-    @SuppressLint("SetTextI18n") // IKD why
+    @SuppressLint("SetTextI18n") // IKD why, but otherwise IDE outlines it.
     public void calculateProportion(boolean left, boolean top) {
         float leftTop, leftBottom, rightTop, rightBottom;
         if (TextUtils.isEmpty(etLeftTop.getText())) {
@@ -84,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
              rightBottom = Float.parseFloat(etRightBottom.getText().toString());
         }
-
         float result;
 
         if (left && top) {
@@ -103,6 +108,12 @@ public class MainActivity extends AppCompatActivity {
             result = leftBottom * rightTop / leftTop;
             etRightBottom.setText(Float.toString(result));
         }
+    }
+    public void clearFields() {
+        etLeftTop.setText("");
+        etLeftBottom.setText("");
+        etRightTop.setText("");
+        etRightBottom.setText("");
 
     }
 
