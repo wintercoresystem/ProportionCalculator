@@ -5,7 +5,9 @@
 
     <string name="LeftTop">First number</string>
     <string name="LeftBottom">Second number</string>
-    <string name="RightTop">1</string>
-    <string name="RightBottom">2</string>
+    <string name="RightTopShown">1</string>
+    <string name="RightBottomShown">2</string>
+    <string name="RightTopHint">Third number</string>
+    <string name="RightBottomHint">Forth number</string>
 
 </resources>

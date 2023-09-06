@@ -66,45 +66,32 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n") // IKD why, but otherwise IDE outlines it.
     public void calculateProportion(boolean left, boolean top) {
-        float leftTop, leftBottom, rightTop, rightBottom;
-        if (TextUtils.isEmpty(etLeftTop.getText())) {
-             leftTop = 0.0F;
-        } else {
-             leftTop = Float.parseFloat(etLeftTop.getText().toString());
+        EditText[] fields = {etLeftTop, etLeftBottom, etRightTop, etRightBottom};
+        float[] values = {0.0F, 0.0F, 0.0F, 0.0F};
+
+        for (int i = 0; i <= 3; i++) {
+            if (!TextUtils.isEmpty(fields[i].getText())) {
+                values[i] = Float.parseFloat(fields[i].getText().toString());
+            }
         }
 
-        if (TextUtils.isEmpty(etLeftBottom.getText())) {
-             leftBottom = 0.0F;
-        } else {
-             leftBottom = Float.parseFloat(etLeftBottom.getText().toString());
-        }
+        float leftTop = values[0];
+        float leftBottom = values[1];
+        float rightTop = values[2];
+        float rightBottom = values[3];
 
-        if (TextUtils.isEmpty(etRightTop.getText())) {
-             rightTop = 0.0F;
-        } else {
-             rightTop = Float.parseFloat(etRightTop.getText().toString());
-        }
-
-        if (TextUtils.isEmpty(etRightBottom.getText())) {
-             rightBottom = 0.0F;
-        } else {
-             rightBottom = Float.parseFloat(etRightBottom.getText().toString());
-        }
         float result;
 
         if (left && top) {
             result = leftBottom * rightTop / rightBottom;
             etLeftTop.setText(Float.toString(result));
-        }
-        if (left && !top) {
+        } else if (left && !top) {
             result = leftTop * rightBottom / rightTop;
             etLeftBottom.setText(Float.toString(result));
-        }
-        if (!left && top) {
+        } else if (!left && top) {
             result = leftTop * rightBottom / leftBottom;
             etRightTop.setText(Float.toString(result));
-        }
-        if (!left && !top) {
+        } else {
             result = leftBottom * rightTop / leftTop;
             etRightBottom.setText(Float.toString(result));
         }
