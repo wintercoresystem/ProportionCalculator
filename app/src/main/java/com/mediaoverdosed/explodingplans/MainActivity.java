@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -68,12 +69,22 @@ public class MainActivity extends AppCompatActivity {
     public void calculateProportion(boolean left, boolean top) {
         EditText[] fields = {etLeftTop, etLeftBottom, etRightTop, etRightBottom};
         float[] values = {0.0F, 0.0F, 0.0F, 0.0F};
+        int zeroesCount = 0;
+
 
         for (int i = 0; i <= 3; i++) {
             if (!TextUtils.isEmpty(fields[i].getText())) {
                 values[i] = Float.parseFloat(fields[i].getText().toString());
+            } else {
+                zeroesCount++;
             }
         }
+
+        if (zeroesCount > 1) {
+            zeroError();
+            return;
+        }
+
 
         float leftTop = values[0];
         float leftBottom = values[1];
@@ -102,6 +113,9 @@ public class MainActivity extends AppCompatActivity {
         etRightTop.setText("");
         etRightBottom.setText("");
 
+    }
+    public void zeroError() {
+        Toast.makeText(this, "Fill three fields!", Toast.LENGTH_SHORT).show();
     }
 
 }
